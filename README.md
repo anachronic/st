@@ -8,8 +8,9 @@ Pretty simple overall.
 
 * [scrollback](https://st.suckless.org/patches/scrollback/) all the way, mouse and keyboard
 * [externalpipe](https://st.suckless.org/patches/externalpipe/) for URLs.
-
-URLs go to firefox for the moment, but i'll be fixing that soon.
+* [solarized](https://st.suckless.org/patches/solarized/) with a theme based on
+  tomorrow color scheme. This allows me to easily swap between dark and light
+  themes. Wee!
 
 ## Dependencies
 

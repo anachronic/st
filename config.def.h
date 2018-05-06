@@ -83,38 +83,64 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
+
 static const char *colorname[] = {
-    "#4f4858",
-    "#c05c47",
-    "#428e8e",
-    "#e4b226",
-    "#4457a3",
-    "#903a62",
-    "#7aa1dc",
-    "#c4b7c5",
-    "#545d67",
-    "#c16772",
-    "#afda6e",
-    "#ebcf1a",
-    "#4880a5",
-    "#9568a1",
-    "#abbcda",
-    "#ffeefc",
+    "#1d1f21", /* base00 */
+    "#cc6666", /* base08 */
+    "#b5bd68", /* base0B */
+    "#f0c674", /* base0A */
+    "#81a2be", /* base0D */
+    "#b294bb", /* base0E */
+    "#8abeb7", /* base0C */
+    "#c5c8c6", /* base05 */
+    "#969896", /* base03 */
+    "#de935f", /* base09 */
+    "#afda6e", /* base01 */
+    "#4880a5", /* base02 */
+    "#b4b7b4", /* base04 */
+    "#e0e0e0", /* base06 */
+    "#a3685a", /* base0F */
+    "#ffffff", /* base07 */
     [255] = 0,
 
     /* more colors can be added after 255 to use with DefaultXX */
     "#111111", /* background */
     "#dddddd", /* foreground */
-    "#c16772", /* cursor */
+    "#ff99f6", /* cursor */
 };
+ 
+/* Terminal colors for alternate (light) palette */
+static const char *altcolorname[] = {
+    "#ffffff", /* base00 */
+    "#c82829", /* base08 */
+    "#718c00", /* base0B */
+    "#eab700", /* base0A */
+    "#4271ae", /* base0D */
+    "#8959a8", /* base0E */
+    "#3e999f", /* base0C */
+    "#4d4d4c", /* base05 */
+    "#8e908c", /* base03 */
+    "#f5871f", /* base09 */
+    "#759348", /* base01 */
+    "#4880a5", /* base02 */
+    "#969896", /* base04 */
+    "#282a2e", /* base06 */
+    "#a3685a", /* base0F */
+    "#1d1f21", /* base07 */
+    [255] = 0,
 
+    /* more colors can be added after 255 to use with DefaultXX */
+    "#111111", /* background */
+    "#dddddd", /* foreground */
+    "#a8259d", /* cursor */
+};
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
+unsigned int defaultfg = 7;
+unsigned int defaultbg = 0;
 static unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 0;
 
@@ -165,7 +191,7 @@ MouseKey mkeys[] = {
 
 /* external pipe command */
 static char *openurlcmd[] = { "/bin/sh", "-c",
-    "xurls | dmenu -l 10 | xargs -r firefox",
+    "xurls | dmenu -l 10 | xargs -r chromium",
     "externalpipe", NULL, NULL };
 
 /* Internal keyboard shortcuts. */
@@ -189,6 +215,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_N,           externalpipe,   {.v =  openurlcmd} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
 };
 
 /*
