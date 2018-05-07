@@ -85,53 +85,86 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 
 static const char *colorname[] = {
-    "#1d1f21", /* base00 */
-    "#cc6666", /* base08 */
-    "#b5bd68", /* base0B */
-    "#f0c674", /* base0A */
-    "#81a2be", /* base0D */
-    "#b294bb", /* base0E */
-    "#8abeb7", /* base0C */
-    "#c5c8c6", /* base05 */
-    "#969896", /* base03 */
-    "#de935f", /* base09 */
-    "#afda6e", /* base01 */
-    "#4880a5", /* base02 */
-    "#b4b7b4", /* base04 */
-    "#e0e0e0", /* base06 */
-    "#a3685a", /* base0F */
-    "#ffffff", /* base07 */
+    "#4f4858",
+    "#cc6666",
+    "#b5bd68",
+    "#e4b226",
+    "#4457a3",
+    "#903a62",
+    "#7aa1dc",
+    "#c4b7c5",
+    "#545d67",
+    "#c16772",
+    "#afda6e",
+    "#ebcf1a",
+    "#4880a5",
+    "#9568a1",
+    "#abbcda",
+    "#ffeefc",
+
+    /* "#1d1f21", */
+    /* "#cc6666", */
+    /* "#b5bd68", */
+    /* "#f0c674", */
+    /* "#81a2be", */
+    /* "#b294bb", */
+    /* "#8abeb7", */
+    /* "#c5c8c6", */
+    /* "#969896", */
+    /* "#de935f", */
+    /* "#afda6e", */
+    /* "#4880a5", */
+    /* "#b4b7b4", */
+    /* "#e0e0e0", */
+    /* "#a3685a", */
+    /* "#ffffff", */
     [255] = 0,
 
     /* more colors can be added after 255 to use with DefaultXX */
-    "#111111", /* background */
-    "#dddddd", /* foreground */
+    "#1d1f21", /* background */
+    "#c5c8c6", /* foreground */
     "#ff99f6", /* cursor */
 };
  
 /* Terminal colors for alternate (light) palette */
 static const char *altcolorname[] = {
-    "#ffffff", /* base00 */
-    "#c82829", /* base08 */
-    "#718c00", /* base0B */
-    "#eab700", /* base0A */
-    "#4271ae", /* base0D */
-    "#8959a8", /* base0E */
-    "#3e999f", /* base0C */
-    "#4d4d4c", /* base05 */
-    "#8e908c", /* base03 */
-    "#f5871f", /* base09 */
-    "#759348", /* base01 */
-    "#4880a5", /* base02 */
-    "#969896", /* base04 */
-    "#282a2e", /* base06 */
-    "#a3685a", /* base0F */
-    "#1d1f21", /* base07 */
+    "#fdf4c1",
+    "#928374",
+    "#cc241d",
+    "#9d0006",
+    "#98971a",
+    "#79740e",
+    "#d79921",
+    "#b57614",
+    "#458588",
+    "#076678",
+    "#b16286",
+    "#8f3f71",
+    "#689d6a",
+    "#427b58",
+    "#7c6f64",
+    "#3c3836",
+    /* "#ffffff", */
+    /* "#c82829", */
+    /* "#718c00", */
+    /* "#eab700", */
+    /* "#4271ae", */
+    /* "#8959a8", */
+    /* "#3e999f", */
+    /* "#4d4d4c", */
+    /* "#8e908c", */
+    /* "#f5871f", */
+    /* "#759348", */
+    /* "#4880a5", */
+    /* "#969896", */
+    /* "#282a2e", */
+    /* "#a3685a", */
+    /* "#1d1f21", */
     [255] = 0,
 
     /* more colors can be added after 255 to use with DefaultXX */
-    "#111111", /* background */
-    "#dddddd", /* foreground */
+    "#fbf1f7", /* background */
+    "#3c3836", /* foreground */
     "#a8259d", /* cursor */
 };
 
@@ -139,8 +172,8 @@ static const char *altcolorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
 static unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 0;
 
